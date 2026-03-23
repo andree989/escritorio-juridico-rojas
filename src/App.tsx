@@ -10,15 +10,13 @@ import Inbox from "./components/Inbox";
 import { useSupabaseAuth } from "./hooks/useSupabaseAuth";
 
 const App: React.FC = () => {
-  const { user, isLoading, signOut, sendMagicLink } = useSupabaseAuth();
+  const { user, signOut } = useSupabaseAuth();
 
   return (
     <div>
       <Header
         user={user}
-        isLoading={isLoading}
         onSignOut={signOut}
-        onSendMagicLink={sendMagicLink}
       />
       <Hero />
       <Services />
