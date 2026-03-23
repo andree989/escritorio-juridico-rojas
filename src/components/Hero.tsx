@@ -1,22 +1,33 @@
 import React from "react";
 
-// Hero section (portada)
-// - Cambia el título o el texto para actualizar el mensaje principal.
-// - El fondo se controla desde `src/index.css` (clase .hero).
-// - El botón de llamada a la acción navega automáticamente a la sección de contacto.
 const Hero: React.FC = () => {
   return (
     <section id="inicio" className="section hero">
       <div className="container">
-        <h2 className="text-3xl font-bold">Defensa legal con excelencia</h2>
-        <p className="mt-4">
-          Asesoría integral para empresas y particulares, con enfoque en resultados y confianza.
+        <span className="hero-badge">Escritorio Jurídico</span>
+        <h1 className="hero-title">Defensa legal con<br /><em>excelencia</em></h1>
+        <p className="hero-subtitle">
+          Asesoría integral para empresas y particulares.<br />
+          Resultados concretos, trato personalizado.
         </p>
         <div className="hero-actions">
-          <button className="cta" onClick={() => (window.location.hash = "#contacto")}>Contáctanos</button>
+          <button className="cta" onClick={() => (window.location.hash = "#contacto")}>
+            Contáctanos ahora
+          </button>
           <a className="cta-outline" href="#servicios">
-            Ver servicios
+            Ver servicios →
           </a>
+        </div>
+        <div className="hero-stats">
+          <div className="hero-stat">
+            <strong>+15</strong><span>años de experiencia</span>
+          </div>
+          <div className="hero-stat">
+            <strong>+500</strong><span>casos resueltos</span>
+          </div>
+          <div className="hero-stat">
+            <strong>3</strong><span>áreas de práctica</span>
+          </div>
         </div>
       </div>
     </section>

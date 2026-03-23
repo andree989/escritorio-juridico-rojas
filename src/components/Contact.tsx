@@ -43,49 +43,64 @@ const Contact: React.FC<ContactProps> = ({ user }) => {
   };
 
   return (
-    <section id="contacto" className="section">
+    <section id="contacto" className="section contact-section">
       <div className="container">
-        <h2 className="text-2xl font-bold mb-4">Contacto</h2>
-        <form className="form" onSubmit={handleSubmit}>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Nombre"
-            className="border p-2"
-            required
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            type="email"
-            className="border p-2"
-            required
-          />
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Mensaje"
-            className="border p-2"
-            required
-          />
-          <button className="btn btn-primary" disabled={status === "loading"}>
-            {status === "loading" ? "Enviando…" : "Enviar"}
-          </button>
-        </form>
-
-        {status === "success" && (
-          <p className="mt-4 text-green-300">¡Mensaje enviado! Te responderemos pronto.</p>
-        )}
-        {status === "error" && (
-          <p className="mt-4 text-red-300">Ocurrió un error: {error}</p>
-        )}
-
-        {user && (
-          <p className="mt-2 text-sm text-gray-400">
-            Enviando como <strong>{user.email}</strong> (ID: <code>{user.id}</code>)
-          </p>
-        )}
+        <div className="contact-grid">
+          <div className="contact-info">
+            <p className="section-label">Estamos aquí</p>
+            <h2 className="section-title">¿Necesitas asesoría legal?</h2>
+            <p className="contact-body">
+              Cuéntanos tu situación. Nuestro equipo revisará tu caso y te responderá
+              en menos de 24 horas con una orientación inicial sin costo.
+            </p>
+            <ul className="contact-details">
+              <li>📍 Valencia, Venezuela</li>
+              <li>📞 +58 (212) 000-0000</li>
+              <li>✉️ contacto@rojasyasociados.com</li>
+              <li>🕐 Lun – Vie: 8:00 am – 6:00 pm</li>
+            </ul>
+          </div>
+          <form className="form" onSubmit={handleSubmit}>
+            <label className="form-label">
+              Nombre completo
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Ej. María González"
+                required
+              />
+            </label>
+            <label className="form-label">
+              Correo electrónico
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="correo@ejemplo.com"
+                type="email"
+                required
+              />
+            </label>
+            <label className="form-label">
+              ¿En qué podemos ayudarte?
+              <textarea
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Describe brevemente tu situación legal…"
+                rows={4}
+                required
+              />
+            </label>
+            <button className="btn btn-primary" disabled={status === "loading"}>
+              {status === "loading" ? "Enviando…" : "Enviar consulta"}
+            </button>
+            {status === "success" && (
+              <p className="form-success">✅ ¡Mensaje recibido! Te responderemos pronto.</p>
+            )}
+            {status === "error" && (
+              <p className="form-error">❌ Ocurrió un error: {error}</p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   );
