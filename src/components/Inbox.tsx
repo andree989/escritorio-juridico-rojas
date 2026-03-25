@@ -44,7 +44,10 @@ const Inbox: React.FC<InboxProps> = ({ user }) => {
     });
   }, [messages, query]);
 
+  console.log("Inbox component loaded");
+
   useEffect(() => {
+    console.log("useEffect triggered: user", user);
     if (!user) {
       setMessages([]);
       setLoading(false);

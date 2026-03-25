@@ -16,6 +16,8 @@ const Contact: React.FC<ContactProps> = ({ user }) => {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
 
+  console.log("Contact component loaded");
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setStatus("loading");
@@ -27,6 +29,13 @@ const Contact: React.FC<ContactProps> = ({ user }) => {
       message,
       user_id: user?.id || null,
     };
+
+    console.log("handleSubmit called with payload:", {
+      name,
+      email,
+      message,
+      user_id: user?.id || null,
+    });
 
     const { error: insertError } = await supabase.from("contacts").insert([payload]);
 

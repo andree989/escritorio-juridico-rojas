@@ -86,6 +86,20 @@ El sitio está dividido en estas secciones (cada una en su propio componente):
 
 ---
 
+## 🆕 Cambios recientes
+
+### Mejoras en la sección "Noticias Jurídicas y Recursos"
+- Se consolidaron los componentes `LegalNews.tsx` y `LegalNewsAndResources.tsx` en un único componente: `LegalNewsAndResources.tsx`.
+- Se eliminó el archivo `LegalNews.tsx` para evitar redundancia.
+- Se actualizó el archivo `main.tsx` para referenciar el nuevo componente consolidado.
+- Se agregó un enlace funcional en la tarjeta "Nueva Ley de Protección de Datos" que redirige a una página externa.
+
+### Otros cambios
+- Se añadieron `console.log` en varios componentes para facilitar el debugging.
+- Se revisaron y mantuvieron los comentarios en los archivos `.tsx` para facilitar futuras modificaciones.
+
+---
+
 ## 🧭 Pasos (de lo más fácil a lo más complejo)
 
 1. **Configurar Supabase (inmediato)**

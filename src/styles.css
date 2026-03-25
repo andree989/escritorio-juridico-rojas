@@ -1,0 +1,232 @@
+/* ---------------------------------------------------
+   Global Styles
+   --------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Theme / design tokens */
+:root {
+  --bg: #0b1220;
+  --bg2: #151d2f;
+  --surface: rgba(241, 238, 226, 0.08);
+  --text: #f4f1e6;
+  --muted: rgba(244, 241, 234, 0.75);
+  --primary: #7c9eff;
+  --accent: #d1b168;
+  --btn-bg: rgba(244, 241, 234, 0.92);
+  --btn-text: #0b1220;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+}
+
+body {
+  margin: 0;
+  padding-top: 90px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, rgba(79, 140, 255, 0.16), transparent 55%),
+    linear-gradient(160deg, var(--bg2), var(--bg));
+  letter-spacing: 0.02em;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* ---------------------------------------------------
+   Section Styles
+   --------------------------------------------------- */
+
+.combined-section {
+  padding: 1.5rem 1rem; /* Reducir el padding para eliminar espacio vacío */
+  background: linear-gradient(135deg, #0d1117, #151d2f); /* Fondo con degradado para un diseño más atractivo */
+  color: #ffffff;
+  text-align: center;
+  min-height: auto; /* Cambiado de 100vh a auto */
+  margin-bottom: 4rem; /* Espaciado adicional para esta sección */
+}
+
+.section-title {
+  font-size: 2rem; /* Reducir tamaño del título */
+  margin-bottom: 1rem;
+  color: #58a6ff;
+  font-weight: bold;
+  border-bottom: 2px solid #58a6ff; /* Línea decorativa debajo del título */
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-description {
+  font-size: 1rem; /* Reducir tamaño del texto descriptivo */
+  margin-bottom: 1.5rem;
+  color: #c9d1d9;
+}
+
+.combined-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem; /* Aumentar el espacio entre las tarjetas */
+  justify-items: center;
+  margin-bottom: 3rem; /* Aumentar el espacio entre las secciones */
+}
+
+.combined-item {
+  background-color: #161b22; /* Color más claro para contraste */
+  border-radius: 10px;
+  padding: 1.2rem; /* Ajustar el padding interno de las tarjetas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  max-width: 240px; /* Reducir el ancho máximo de las tarjetas */
+}
+
+.combined-item:hover {
+  transform: translateY(-8px); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 2rem; /* Reducir el tamaño de los íconos */
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+.combined-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #58a6ff;
+  font-weight: bold;
+}
+
+/* Ajuste de espaciado entre secciones */
+section {
+  margin: 3rem 0; /* Espaciado uniforme entre secciones */
+}
+
+/* ---------------------------------------------------
+   Component Styles
+   --------------------------------------------------- */
+
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+}
+
+.counter:hover {
+  border-color: var(--accent-border);
+}
+
+.counter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero .base,
+.hero .framework,
+.hero .vite {
+  inset-inline: 0;
+  margin: 0 auto;
+}
+
+.hero .base {
+  width: 170px;
+  position: relative;
+  z-index: 0;
+}
+
+.hero .framework {
+  z-index: 1;
+  top: 34px;
+  height: 28px;
+  transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
+}
+
+.hero .vite {
+  z-index: 0;
+}
+
+.section {
+  padding: 3rem 0; /* Aumentar el padding para mayor separación */
+  min-height: auto; /* Asegurar que la altura mínima no sea fija */
+}
+
+.contact-section {
+  padding: 2rem 1rem; /* Ajuste del padding para reducir espacio */
+  margin-top: 2rem; /* Reducir espacio superior */
+  margin-bottom: 2rem; /* Reducir espacio inferior */
+}
+
+.legal-news-section {
+  padding: 2rem 1rem;
+  background-color: #0d1117;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 4rem; /* Aumentar el espacio entre las secciones */
+}
+
+.legal-news-resources-section {
+  padding: 3rem 1rem;
+  background-color: #0d1117;
+  color: #ffffff;
+  text-align: center;
+}
+
+.news-grid,
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajustar el tamaño de las tarjetas */
+  gap: 2rem; /* Aumentar el espacio entre las tarjetas */
+  justify-items: center;
+  margin-bottom: 3rem; /* Aumentar el espacio entre las secciones */
+}
+
+.news-item,
+.resource-item {
+  background-color: #161b22;
+  border-radius: 10px;
+  padding: 1.2rem; /* Ajustar el padding interno de las tarjetas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  max-width: 240px; /* Reducir el ancho máximo de las tarjetas */
+}
+
+.news-item:hover,
+.resource-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  font-size: 2rem; /* Reducir el tamaño de los íconos */
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+.news-title,
+.resource-title {
+  font-size: 1.3rem; /* Reducir el tamaño de los títulos */
+  margin-bottom: 0.5rem;
+  color: #58a6ff;
+  font-weight: bold;
+}
