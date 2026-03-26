@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles.css";
 import { FaNewspaper, FaGavel, FaBook, FaFileAlt, FaUserTie, FaBriefcase } from "react-icons/fa";
 
